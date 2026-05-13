@@ -27,7 +27,7 @@ const Weather = () => {
       const forecastData = await forecastResponse.json();
 
       // FILTER DAILY FORECAST
-      const dailyForecast = forecastData.list.filter((item) =>
+      const dailyForecast = forecastData?.list?.filter((item) =>
         item.dt_txt.includes("12:00:00")
       );
 
@@ -100,7 +100,7 @@ const Weather = () => {
             </h1>
 
             <p className="capitalize text-gray-500 mt-2">
-              {data.weather[0]?.description}
+              {data?.weather[0]?.description}
             </p>
 
             {/* WEATHER DETAILS */}
