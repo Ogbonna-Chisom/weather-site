@@ -13,7 +13,7 @@ const Weather = () => {
   const search = async (city) => {
     try {
       // CURRENT WEATHER
-      const currentUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${import.meta.env.VITE_APP_ID}`;
+      const currentUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${import.meta.env.VITE_WEATHER_API_KEY }`;
 
       const currentResponse = await fetch(currentUrl);
       const currentData = await currentResponse.json();
@@ -21,7 +21,7 @@ const Weather = () => {
       setData(currentData);
 
       // 3-DAY FORECAST
-      const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${import.meta.env.VITE_APP_ID}`;
+      const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${import.meta.env.VITE_WEATHER_API_KEY }`;
 
       const forecastResponse = await fetch(forecastUrl);
       const forecastData = await forecastResponse.json();
