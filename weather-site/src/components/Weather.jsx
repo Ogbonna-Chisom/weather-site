@@ -92,15 +92,15 @@ const Weather = () => {
           <>
             {/* CURRENT WEATHER */}
             <h2 className="text-2xl font-semibold">
-              {data.name}
+              {data?.name}
             </h2>
 
             <h1 className="text-6xl font-bold mt-4">
-              {Math.round(data.main.temp)}°C
+              {Math.round(data?.main?.temp)}°C
             </h1>
 
             <p className="capitalize text-gray-500 mt-2">
-              {data.weather[0].description}
+              {data.weather[0]?.description}
             </p>
 
             {/* WEATHER DETAILS */}
@@ -108,24 +108,25 @@ const Weather = () => {
               <div className="bg-blue-100 p-4 rounded-xl flex-1">
                 <p className="text-sm text-gray-500">Wind</p>
                 <h3 className="text-xl font-bold">
-                  {data.wind.speed} km/h
+                  {data?.wind.speed} km/h
                 </h3>
               </div>
 
               <div className="bg-gray-100 p-4 rounded-xl flex-1">
                 <p className="text-sm text-gray-500">Humidity</p>
                 <h3 className="text-xl font-bold">
-                  {data.main.humidity}%
+                  {data?.main?.humidity}%
                 </h3>
               </div>
 
               <div className="bg-orange-100 p-4 rounded-xl flex-1">
                 <p className="text-sm text-gray-500">Feels Like</p>
                 <h3 className="text-xl font-bold">
-                  {Math.round(data.main.feels_like)}°C
+                  {Math.round(data?.main?.feels_like)}°C
                 </h3>
               </div>
             </div>
+
 
             {/* 3 DAY FORECAST */}
             <div className="mt-8">
@@ -134,7 +135,7 @@ const Weather = () => {
               </h3>
 
               <div className="flex gap-4">
-                {forecast.map((day, index) => (
+                {forecast?.map((day, index) => (
                   <div
                     key={index}
                     className="bg-gray-100 p-4 rounded-2xl flex-1"
@@ -149,7 +150,7 @@ const Weather = () => {
                     </h4>
 
                     <p className="text-2xl font-bold mt-2">
-                      {Math.round(day.main.temp)}°C
+                      {Math.round(day.main?.temp)}°C
                     </p>
 
                     <p className="text-gray-500 capitalize mt-1">
